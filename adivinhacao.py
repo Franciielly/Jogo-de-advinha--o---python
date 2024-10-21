@@ -1,11 +1,4 @@
-# Função para gerar número aleatório
-def gerar_numeroAleatorio():
-    numeroUsuario = int(input("Digite um número inteiro positivo: "))
-    if numeroUsuario > 0:
-        return (numeroUsuario % 100) + 14
-    else:
-        print("Por favor, digite um número positivo")
-        return gerar_numeroAleatorio() # Chama a função até obter uma entrada válida
+import random
 
 # Função para gerar dicas com base no número tentado 
 def gerar_dica (numeroT, numeroC):
@@ -19,7 +12,7 @@ def gerar_dica (numeroT, numeroC):
 # Função principal do jogo
 def jogoAdivinhacao():
     tentativa = 5 # número de tentiva
-    numeroC = gerar_numeroAleatorio() # Gera número secreto
+    numeroC = random.randint(1,100) # Gera número secreto
 
     print("-----------Jogo de adivinhação--------------")
     print("\n")
